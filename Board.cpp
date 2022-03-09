@@ -1,0 +1,29 @@
+#include <iostream>
+#include "Player.h"
+#include "ComputerPlayer.h"
+
+//boards are always a square so there is no need to take two ints for this
+/*Board* buildBoard(int size)
+{
+	Board* gameBoard = new Board[size][size];
+}
+*/
+
+void Board::drawBoard(Board* currentBoard)
+{
+	for (rows in currentBoard)
+	{
+
+	}
+}
+
+
+Board::Board()
+{
+	board =
+	{
+		{'_', '_', '_'},
+		{'_', '_', '_'},
+		{'_', '_', '_'}
+	};
+}
