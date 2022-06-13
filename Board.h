@@ -23,7 +23,7 @@ public:
 	{
 	}
 	void drawBoard(const Board*);
-	bool newPosition(int, int);
+	bool newPosition(const int,const int);
 
 
 

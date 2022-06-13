@@ -9,9 +9,9 @@
 }
 */
 
-void Board::drawBoard(Board* currentBoard)
+void Board::drawBoard(const Board* currentBoard)
 {
-	for (rows in currentBoard)
+	for ()
 	{
 
 	}
