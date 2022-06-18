@@ -1,4 +1,4 @@
-#include <iostream>
+b#include <iostream>
 #include "Player.h"
 #include "ComputerPlayer.h"
 
@@ -20,6 +20,7 @@ void Board::drawBoard(const Board* currentBoard)
 
 Board::Board()
 {
+	//Instantiate a new Board
 	board =
 	{
 		{'_', '_', '_'},

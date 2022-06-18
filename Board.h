@@ -10,18 +10,10 @@ private:
 	std::vector<std::vector<char>> board = {};
 
 public:
-	Board()
-	{
-		board =
-		{
-			{'_', '_', '_'},
-			{'_', '_', '_'},
-			{'_', '_', '_'}
-		};
-	}
-	~Board() 
-	{
-	}
+	Board();
+	~Board(): 
+	
+	
 	void drawBoard(const Board*);
 	bool newPosition(const int,const int);
 

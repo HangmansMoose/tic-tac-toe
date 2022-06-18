@@ -21,16 +21,15 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="ComputerPlayer.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TicTacToe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="ComputerPlayer.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="build.bat" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
