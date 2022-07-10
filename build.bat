@@ -10,4 +10,4 @@ set debug_flags=-nologo -Zi -Wall -FC
 
 set library_paths=/ling user32.lib gdi32.lib
 
-cl %debug_flags% %library_paths% %warnings_to_ignore%
+cl.exe tictactoe.cpp %debug_flags% %library_paths% %warnings_to_ignore%
