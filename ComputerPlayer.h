@@ -1,3 +1,0 @@
-#pragma once
-
-//I just couldn't bring myself to call this AI...
