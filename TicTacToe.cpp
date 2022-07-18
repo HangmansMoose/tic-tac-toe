@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
 	std::vector<char> board(NUM_SQUARES, EMPTY);
 	instructions();
-	char human = humanPiece();
+	char human = player();
 	//what ever the player picked the cpu will be opposite
 	char computer = opponent(human);
 	char turn = X;
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	{
 		if (turn == human)
 		{
-			move = humanMove(board, human);
+			move = playerMove(board, human);
 			board[move] = human;
 		}
 		else
@@ -42,6 +42,9 @@ int main(int argc, char *argv[])
 
 void instructions()
 {
+
+	// Was originally going to do a 2d array but after looking at the way other people did it, a 1D array seemed to be
+	// A simpler solution for this problem.
 	std::cout << "Board is represented by numbers 0-8, to make a move input the square number that you wish to occupy\n";
 	std::cout << " 0 | 1 | 2 \n";
 	std::cout << "-----------\n";
@@ -56,6 +59,8 @@ int askNumber(std::string question, int high, int low)
 {
 	int number;
 
+	// Clamp the user input number to the size of the board 
+
 	do {
 		std::cout << question << "(" << low << " - " << high << "): ";
 		std::cin >> number;
@@ -65,6 +70,8 @@ int askNumber(std::string question, int high, int low)
 	return number;
 }
 
+
+// Had to ask more than one question so made a function
 char askYesNo(std::string question)
 {
 	char response;
@@ -79,7 +86,7 @@ char askYesNo(std::string question)
 }
 
 
-char humanPiece()
+char player()
 {
 	char go_first = askYesNo("Would you like to go first?: ");
 
@@ -129,11 +136,11 @@ void announceWinner(char winner, char computer, char human)
 
 void displayBoard(const std::vector<char>& board)
 {
-	std::cout << "\n\t" << board[0] << board[1] << board[2];
+	std::cout << "\n\t" << board[0] <<  " | " << board[1] << " | " << board[2];
 	std::cout << "\n\t" << "---------";
-	std::cout << "\n\t" << board[3] << board[4] << board[5];
+	std::cout << "\n\t" << board[3] << " | " << board[4] << " | " << board[5];
 	std::cout << "\n\t" << "---------";
-	std::cout << "\n\t" << board[6] << board[7] << board[8];
+	std::cout << "\n\t" << board[6] << " | " << board[7] << " | " << board[8];
 
 }
 
@@ -142,6 +149,7 @@ char winner(const std::vector<char>& board)
 {
 	const int TOTAL_ROWS = 8;
 
+	// This I struggled with and went and found a good solution 
 	const int winningPositions[8][3] =
 	{
 		{0,1,2},
@@ -158,7 +166,7 @@ char winner(const std::vector<char>& board)
 	{
 		if ((board[winningPositions[row][0]] != EMPTY) &&
 			(board[winningPositions[row][0] == board[winningPositions[row][1]]]) &&
-			(board[winningPositions[row][0]] == board[winningPositions[row][2]]))
+			(board[winningPositions[row][1]] == board[winningPositions[row][2]]))
 		{
 			return board[winningPositions[row][0]];
 		}
@@ -174,12 +182,13 @@ char winner(const std::vector<char>& board)
 
 }
 
-inline bool isLegal(const std::vector<char>& board, int move)
+
+bool isLegal(const std::vector<char>& board, int move)
 {
 	return (board[move] == EMPTY);
 }
 
-int humanMove(const std::vector<char>& board, char human)
+int playerMove(const std::vector<char>& board, char human)
 {
 	int move = askNumber("Position? ", (board.size() - 1));
 

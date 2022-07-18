@@ -17,11 +17,11 @@ void instructions();
 char askYesNo(std::string question);
 int askNumber(std::string question, int high, int low = 0);
 char opponent(char piece);
-char humanPiece();
+char player();
 void announceWinner(char winner, char human, char computer);
 void displayBoard(const std::vector<char>& board);
 // I don't know why VS thinks winner is different from all the other functions???
 char winner(const std::vector<char>& board);
 bool isLegal(const std::vector<char>& board, int move);
-int humanMove(const std::vector<char>& board, char human);
+int playerMove(const std::vector<char>& board, char human);
 int computerMove(const std::vector<char> board, char computer);
